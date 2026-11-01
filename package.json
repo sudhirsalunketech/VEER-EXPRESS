@@ -1,0 +1,15 @@
+{
+  "name": "veer-express-courier",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm -w apps/web run dev",
+    "dev:api": "npm -w apps/api run start:dev",
+    "build": "npm -w apps/web run build && npm -w apps/api run build",
+    "test": "npm -w packages/core test && npm -w apps/web test && npm -w apps/api test",
+    "db:seed": "npm -w apps/api run db:seed"
+  }
+}

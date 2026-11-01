@@ -1,0 +1,1 @@
+{ "extends": "./tsconfig.json", "compilerOptions": { "rootDir": "../.." }, "include": ["src", "../../packages/core/src"], "exclude": ["test", "../../packages/core/src/**/*.test.ts"] }

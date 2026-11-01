@@ -1,0 +1,6 @@
+import { Module } from '@nestjs/common';
+import { AuditModule } from '../audit/audit.module';
+import { BillingController } from './billing.controller';
+
+@Module({ imports: [AuditModule], controllers: [BillingController] })
+export class BillingModule {}

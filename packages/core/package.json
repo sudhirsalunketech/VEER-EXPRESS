@@ -1,0 +1,14 @@
+{
+  "name": "@veer/core",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc -p . --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "5.6.3",
+    "vitest": "2.1.8"
+  },
+  "description": "Shared pricing/allocation/tracking logic, consumed from source by apps/web (Vite alias) and apps/api (tsc + tsc-alias)."
+}

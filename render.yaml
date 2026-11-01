@@ -1,0 +1,26 @@
+# Render Blueprint — nothing is created until you apply it from the Render dashboard.
+services:
+  - type: web
+    name: veer-express-api
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm -w apps/api run build
+    startCommand: npm -w apps/api run start
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: APP_MODE
+        value: demo            # switch to production only after DB + secrets are configured
+      - key: NODE_VERSION
+        value: "22"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGINS
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: CREDENTIAL_ENCRYPTION_KEY
+        sync: false
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
