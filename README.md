@@ -102,3 +102,4 @@ TEST_DATABASE_URL=postgres://... npm -w apps/api test   # also runs Postgres int
 - Courier credentials and payment secrets live only in server env or encrypted DB columns, never in the browser.
 - Counter staff never see courier names, AWBs, aggregator references or costs; only admins manage staff. Tests enforce this.
 - No paid service, domain or live credential is used without explicit approval.
+# VEER-EXPRESS
