@@ -2,7 +2,8 @@
  * REST client for the NestJS API (live mode). Demo mode uses src/demo/store.ts instead; see src/data/source.tsx.
  * Never put secrets here: the browser only ever holds the user's own short-lived JWT.
  */
-const BASE = (import.meta.env.VITE_API_URL ?? 'http://localhost:3000') + '/api/v1';
+// Same-origin on Vercel (the api service is mounted at /api); localhost:3000 in local Vite dev.
+const BASE = (import.meta.env.VITE_API_URL ?? (import.meta.env.DEV ? 'http://localhost:3000' : '')) + '/api/v1';
 let token: string | null = null;
 export const setToken = (t: string | null) => { token = t; };
 
